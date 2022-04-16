@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
             //Xảy ra khi gửi tài khoản lên hệ thống thành công
             @Override
             public void onEventSuccess() {
-                Toast.makeText(getBaseContext(), "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), R.string.loginSuccess, Toast.LENGTH_SHORT).show();
 
                 //Nếu bấm vào "Lưu mật khẩu", thì sẽ lưu thông tin tài khoản vào thiết bị
                 if(chkSavePassword.isChecked()){
@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
             //Xảy ra khi gửi thông tin tài khoản lên hệ thống thất bại
             @Override
             public void onEventError() {
-                Toast.makeText(getBaseContext(), "Đăng Nhập Thất Bại", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), R.string.loginFail, Toast.LENGTH_SHORT).show();
             }
         });
     }

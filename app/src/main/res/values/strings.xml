@@ -3,6 +3,7 @@
     <string name="app_title">Life Wear Fashion App</string>
 
     //login activity
+    //in XML
     <string name="loginActivity_txtUsername_hint">Nhập Tài Khoản:</string>
     <string name="loginActivity_txtUsername_note_hint">Nhập vào tài khoản</string>
     <string name="loginActivity_txtPassword_hint">Nhập Mật Khẩu:</string>
@@ -10,6 +11,10 @@
     <string name="loginActivity_chkSavePassword">Lưu mật khẩu</string>
     <string name="loginActivity_btnLogin_text">Đăng Nhập</string>
     <string name="loginActivity_btnForgetPassword_text">Quên Mật Khẩu</string>
+
+    //in Activity
+    <string name="loginSuccess">Đăng Nhập Thành Công</string>
+    <string name="loginFail">Đăng Nhập Thất Bại</string>
 
     //register activity
 
