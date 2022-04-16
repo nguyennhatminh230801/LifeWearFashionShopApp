@@ -9,7 +9,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatCheckBox;
 
 import com.google.android.material.textfield.TextInputLayout;
-import com.nguyennhatminh614.lifewearfashionshopapp.Model.Account;
+import com.nguyennhatminh614.lifewearfashionshopapp.Model.TempAccountModel;
 import com.nguyennhatminh614.lifewearfashionshopapp.Presenter.LoginUseCase.ILogin;
 import com.nguyennhatminh614.lifewearfashionshopapp.Presenter.LoginUseCase.LoginPresenter;
 import com.nguyennhatminh614.lifewearfashionshopapp.R;
@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = txtPassword.getEditText().getText().toString();
 
         //Login Event
-        btnLogin.setOnClickListener(view -> mLoginPresenter.onHandleLogin(new Account(username, password, "android")));
+        btnLogin.setOnClickListener(view -> mLoginPresenter.onHandleLogin(new TempAccountModel(username, password, "android")));
 
         //Forget Password Event
         btnForgetPassword.setOnClickListener(view -> mLoginPresenter.onForgetPasswordEvent(username));
@@ -47,12 +47,12 @@ public class LoginActivity extends AppCompatActivity {
 
         mLoginPresenter.setLogicForView(new ILogin.View() {
             @Override
-            public void LoginSuccess() {
+            public void onEventSuccess() {
                 Toast.makeText(getBaseContext(), "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void LoginFailure() {
+            public void onEventError() {
                 Toast.makeText(getBaseContext(), "Đăng Nhập Thất Bại", Toast.LENGTH_SHORT).show();
             }
         });

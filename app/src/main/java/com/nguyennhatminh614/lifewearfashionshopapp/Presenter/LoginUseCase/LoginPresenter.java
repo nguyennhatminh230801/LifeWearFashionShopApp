@@ -1,6 +1,6 @@
 package com.nguyennhatminh614.lifewearfashionshopapp.Presenter.LoginUseCase;
 
-import com.nguyennhatminh614.lifewearfashionshopapp.Model.Account;
+import com.nguyennhatminh614.lifewearfashionshopapp.Model.TempAccountModel;
 import com.nguyennhatminh614.lifewearfashionshopapp.util.api.APIService;
 
 import retrofit2.Call;
@@ -15,27 +15,17 @@ public class LoginPresenter implements ILogin.Presenter{
     }
 
     @Override
-    public void onHandleLogin(Account account) {
-        APIService.apiService.loginMethod(account).enqueue(new Callback<Account>() {
+    public void onHandleLogin(TempAccountModel tempAccountModel) {
+        APIService.apiService.loginMethod(tempAccountModel).enqueue(new Callback<TempAccountModel>() {
             @Override
-            public void onResponse(Call<Account> call, Response<Account> response) {
-                mView.LoginSuccess();
+            public void onResponse(Call<TempAccountModel> call, Response<TempAccountModel> response) {
+                mView.onEventSuccess();
             }
 
             @Override
-            public void onFailure(Call<Account> call, Throwable t) {
-                mView.LoginFailure();
+            public void onFailure(Call<TempAccountModel> call, Throwable t) {
+                mView.onEventError();
             }
         });
-    }
-
-    @Override
-    public void onValidateAccount(Account account) {
-
-    }
-
-    @Override
-    public void onForgetPasswordEvent(String username) {
-
     }
 }

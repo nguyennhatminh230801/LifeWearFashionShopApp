@@ -45,7 +45,6 @@
                     android:layout_height="wrap_content"
                     android:hint="Nhập Tài Khoản:" />
 
-
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.Objects;
 
-public class Account {
+public class TempAccountModel {
     @SerializedName("email")
     @Expose
     private String username;
@@ -42,10 +42,10 @@ public class Account {
         this.password = password;
     }
 
-    public Account() {
+    public TempAccountModel() {
     }
 
-    public Account(String username, String password, String deviceName) {
+    public TempAccountModel(String username, String password, String deviceName) {
         this.username = username;
         this.password = password;
         this.deviceName = deviceName;
@@ -53,9 +53,9 @@ public class Account {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Account)) return false;
-        Account account = (Account) o;
-        return Objects.equals(username, account.username) && Objects.equals(password, account.password);
+        if (!(o instanceof TempAccountModel)) return false;
+        TempAccountModel tempAccountModel = (TempAccountModel) o;
+        return Objects.equals(username, tempAccountModel.username) && Objects.equals(password, tempAccountModel.password);
     }
 
     @Override

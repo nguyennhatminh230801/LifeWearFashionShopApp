@@ -1,6 +1,6 @@
 package com.nguyennhatminh614.lifewearfashionshopapp.Presenter.RegisterUseCase;
 
-import com.nguyennhatminh614.lifewearfashionshopapp.Model.AccountDTO;
+import com.nguyennhatminh614.lifewearfashionshopapp.Model.AccountModel;
 import com.nguyennhatminh614.lifewearfashionshopapp.util.api.APIService;
 
 import retrofit2.Call;
@@ -15,16 +15,16 @@ public class RegisterPresenter implements IRegister.Presenter{
     }
 
     @Override
-    public void onHandleRegister(AccountDTO accountDTO) {
-        APIService.apiService.registerMethod(accountDTO).enqueue(new Callback<AccountDTO>() {
+    public void onHandleRegister(AccountModel accountModel) {
+        APIService.apiService.registerMethod(accountModel).enqueue(new Callback<AccountModel>() {
             @Override
-            public void onResponse(Call<AccountDTO> call, Response<AccountDTO> response) {
-                mRegisterView.RegisterSuccess();
+            public void onResponse(Call<AccountModel> call, Response<AccountModel> response) {
+                mRegisterView.onEventSuccess();
             }
 
             @Override
-            public void onFailure(Call<AccountDTO> call, Throwable t) {
-                mRegisterView.RegisterFailure();
+            public void onFailure(Call<AccountModel> call, Throwable t) {
+                mRegisterView.onEventError();
             }
         });
     }

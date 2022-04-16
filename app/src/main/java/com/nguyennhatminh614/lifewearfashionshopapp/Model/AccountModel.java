@@ -3,7 +3,7 @@ package com.nguyennhatminh614.lifewearfashionshopapp.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class AccountDTO {
+public class AccountModel {
     @SerializedName("first_name")
     @Expose
     private String firstName;
@@ -24,10 +24,10 @@ public class AccountDTO {
     @Expose
     private int isMale;
 
-    public AccountDTO() {
+    public AccountModel() {
     }
 
-    public AccountDTO(String firstName, String lastName, String email, String password, int isMale) {
+    public AccountModel(String firstName, String lastName, String email, String password, int isMale) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
