@@ -1,15 +1,19 @@
 package com.nguyennhatminh614.lifewearfashionshopapp.Model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class BrandModel {
     @SerializedName("id")
+    @Expose
     private int id;
 
     @SerializedName("slug")
+    @Expose
     private String slug;
 
     @SerializedName("name")
+    @Expose
     private String name;
 
     public BrandModel() {

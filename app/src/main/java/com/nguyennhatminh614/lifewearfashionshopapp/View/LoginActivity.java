@@ -1,5 +1,7 @@
 package com.nguyennhatminh614.lifewearfashionshopapp.View;
 
+import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +15,8 @@ import com.nguyennhatminh614.lifewearfashionshopapp.Model.TempAccountModel;
 import com.nguyennhatminh614.lifewearfashionshopapp.Presenter.LoginUseCase.ILogin;
 import com.nguyennhatminh614.lifewearfashionshopapp.Presenter.LoginUseCase.LoginPresenter;
 import com.nguyennhatminh614.lifewearfashionshopapp.R;
+
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
     TextView txtPassword_note, txtUsername_note;
@@ -31,26 +35,57 @@ public class LoginActivity extends AppCompatActivity {
         addEvents();
     }
 
-    private void addEvents() {
-        String username = txtUsername.getEditText().getText().toString();
-        String password = txtPassword.getEditText().getText().toString();
+    //Khi Activity chạy đến onStart sẽ thực hiện việc lấy tài khoản, mật khẩu đã lưu trong thiết bị
+    @Override
+    protected void onStart() {
+        super.onStart();
 
-        //Login Event
-        btnLogin.setOnClickListener(view -> mLoginPresenter.onHandleLogin(new TempAccountModel(username, password, "android")));
+        //Lấy thông tin tài khoản, mật khẩu được lưu trong thiết bị
+        SharedPreferences sharedPreferences = getSharedPreferences("saveData", MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", null);
+        String password = sharedPreferences.getString("password", null);
 
-        //Forget Password Event
-        btnForgetPassword.setOnClickListener(view -> mLoginPresenter.onForgetPasswordEvent(username));
+        //Nếu tài khoản và mật khẩu tồn tại trong thiết bị thì gán ngược lại vào trong View
+        if (username != null && password != null){
+            Objects.requireNonNull(txtPassword.getEditText()).setText(password);
+            Objects.requireNonNull(txtUsername.getEditText()).setText(username);
+        }
     }
 
+    private void addEvents() {
+        //Lấy thông tin tài khoản, mật khẩu
+        String username = Objects.requireNonNull(txtUsername.getEditText()).getText().toString();
+        String password = Objects.requireNonNull(txtPassword.getEditText()).getText().toString();
+
+        //Sự kiện đăng nhập
+        btnLogin.setOnClickListener(view -> {
+            mLoginPresenter.onHandleLogin(new TempAccountModel(username, password, "android"));
+        });
+
+        //Sự kiện quên mật khẩu
+        btnForgetPassword.setOnClickListener(view -> {});
+    }
+
+    @SuppressLint("CommitPrefEdits")
     private void registerPresenter() {
         mLoginPresenter = new LoginPresenter();
 
         mLoginPresenter.setLogicForView(new ILogin.View() {
+            //Xảy ra khi gửi tài khoản lên hệ thống thành công
             @Override
             public void onEventSuccess() {
                 Toast.makeText(getBaseContext(), "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
+
+                //Nếu bấm vào "Lưu mật khẩu", thì sẽ lưu thông tin tài khoản vào thiết bị
+                if(chkSavePassword.isChecked()){
+                    SharedPreferences sharedPreferences = getSharedPreferences("saveData", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("username", Objects.requireNonNull(txtUsername.getEditText()).getText().toString()).apply();
+                    editor.putString("password", Objects.requireNonNull(txtPassword.getEditText()).getText().toString()).apply();
+                }
             }
 
+            //Xảy ra khi gửi thông tin tài khoản lên hệ thống thất bại
             @Override
             public void onEventError() {
                 Toast.makeText(getBaseContext(), "Đăng Nhập Thất Bại", Toast.LENGTH_SHORT).show();
@@ -58,6 +93,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    //Ánh xạ (Mapping) các thành phần trong View sang Activity
     private void getMappingItem() {
         txtPassword_note = findViewById(R.id.txtPassword_note);
         txtUsername_note = findViewById(R.id.txtUsername_note);
@@ -67,4 +103,5 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnForgetPassword = findViewById(R.id.btnForgetPassword);
     }
+
 }

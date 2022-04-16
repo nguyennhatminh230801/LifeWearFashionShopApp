@@ -1,47 +1,61 @@
 package com.nguyennhatminh614.lifewearfashionshopapp.Model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
 public class Product {
     @SerializedName("id")
+    @Expose
     private int id;
 
     @SerializedName("name")
+    @Expose
     private String name;
 
     @SerializedName("slug")
+    @Expose
     private String slug;
 
     @SerializedName("description")
+    @Expose
     private String description;
 
     @SerializedName("status")
+    @Expose
     private String status;
 
     @SerializedName("category_id")
+    @Expose
     private String category_id;
 
     @SerializedName("brand_id")
+    @Expose
     private String brand_id;
 
     @SerializedName("created_at")
+    @Expose
     private String created_at;
 
     @SerializedName("updated_at")
+    @Expose
     private String updated_at;
 
     @SerializedName("image")
+    @Expose
     private ArrayList<ImageModel> listImages;
 
     @SerializedName("cover")
+    @Expose
     private CoverModel coverModel;
 
     @SerializedName("category")
+    @Expose
     private CategoryModel categoryModel;
 
     @SerializedName("brand")
+    @Expose
     private BrandModel brandModel;
 
     public Product() {

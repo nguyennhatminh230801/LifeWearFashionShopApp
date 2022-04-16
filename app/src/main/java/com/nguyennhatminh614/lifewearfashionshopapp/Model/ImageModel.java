@@ -1,12 +1,15 @@
 package com.nguyennhatminh614.lifewearfashionshopapp.Model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class ImageModel {
     @SerializedName("id")
+    @Expose
     private int id;
 
     @SerializedName("image")
+    @Expose
     private String imageLink;
 
     public ImageModel() {

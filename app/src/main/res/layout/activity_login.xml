@@ -13,9 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="79dp"
+        android:layout_marginTop="20dp"
         android:gravity="top"
-        android:text="Life Wear Fashion App"
+        android:text="@string/app_title"
         android:textColor="@color/black"
         android:textSize="25sp" />
 
@@ -23,9 +23,9 @@
         android:id="@+id/card_view_1"
         android:layout_width="326dp"
         android:layout_height="410dp"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="132dp"
+        android:layout_below="@id/app_title"
+        android:layout_marginTop="20dp"
         app:cardCornerRadius="30dp">
 
         <RelativeLayout
@@ -38,12 +38,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginRight="10dp"
+                android:hint="@string/loginActivity_txtUsername_hint">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nhập Tài Khoản:" />
+                    android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -52,9 +52,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtUsername"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:paddingTop="5dp"
-                android:text="Nhập vào mật khẩu" />
+                android:text="@string/loginActivity_txtUsername_note_hint" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtPassword"
@@ -63,12 +63,12 @@
                 android:layout_below="@+id/txtUsername_note"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginRight="10dp"
+                android:hint="@string/loginActivity_txtPassword_hint">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập Mật Khẩu:"
                     android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -78,17 +78,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtPassword"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:paddingTop="5dp"
-                android:text="Nhập vào mật khẩu: " />
+                android:text="@string/loginActivity_txtPassword_note_hint" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/chkSavePassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtPassword_note"
-                android:layout_marginLeft="10dp"
-                android:text="Lưu mật khẩu">
+                android:layout_marginStart="10dp"
+                android:text="@string/loginActivity_chkSavePassword">
 
             </androidx.appcompat.widget.AppCompatCheckBox>
 
@@ -100,7 +100,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:backgroundTint="#72F10E"
-                android:text="Đăng Nhập"
+                android:text="@string/loginActivity_btnLogin_text"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -113,7 +113,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
-                android:text="Quên Mật Khẩu"
+                android:text="@string/loginActivity_btnForgetPassword_text"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
