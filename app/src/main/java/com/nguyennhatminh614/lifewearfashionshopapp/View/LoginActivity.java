@@ -2,17 +2,19 @@ package com.nguyennhatminh614.lifewearfashionshopapp.View;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.core.app.ActivityCompat;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -27,11 +29,13 @@ import java.util.Objects;
 import okhttp3.ResponseBody;
 
 public class LoginActivity extends AppCompatActivity {
-    TextView txtPassword_note, txtUsername_note;
-    TextInputLayout txtUsername, txtPassword;
-    AppCompatCheckBox chkSavePassword;
-    AppCompatButton btnLogin, btnForgetPassword;
+    TextInputLayout txtEmail, txtPassword;
+    CheckBox chkSavePassword;
+    AppCompatButton btnLogin, btnRegister;
     LoginPresenter mLoginPresenter;
+    TextView txtForgetPassword;
+    ImageView btnAuthThroughFacebook, btnAuthThroughGoogle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +65,13 @@ public class LoginActivity extends AppCompatActivity {
         //Nếu tài khoản và mật khẩu tồn tại trong thiết bị thì gán ngược lại vào trong View
         if (username != null && password != null){
             Objects.requireNonNull(txtPassword.getEditText()).setText(password);
-            Objects.requireNonNull(txtUsername.getEditText()).setText(username);
+            Objects.requireNonNull(txtEmail.getEditText()).setText(username);
         }
     }
 
     private void addEvents() {
         //Lấy thông tin tài khoản, mật khẩu
-        String username = Objects.requireNonNull(txtUsername.getEditText()).getText().toString();
+        String username = Objects.requireNonNull(txtEmail.getEditText()).getText().toString();
         String password = Objects.requireNonNull(txtPassword.getEditText()).getText().toString();
 
         SharedPreferences sharedPreferences = getSharedPreferences("saveData", MODE_PRIVATE);
@@ -78,8 +82,11 @@ public class LoginActivity extends AppCompatActivity {
             mLoginPresenter.onHandleLogin(new TempAccountModel(username, password, deviceName));
         });
 
+        btnRegister.setOnClickListener(view -> {
+            startActivity(new Intent(getBaseContext(), RegisterActivity.class));
+        });
         //Sự kiện quên mật khẩu
-        btnForgetPassword.setOnClickListener(view -> {});
+        txtForgetPassword.setOnClickListener(view -> {});
     }
 
     @SuppressLint("CommitPrefEdits")
@@ -99,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                     //Nếu bấm vào "Lưu mật khẩu", thì sẽ lưu thông tin tài khoản vào thiết bị
                     if(chkSavePassword.isChecked()){
 
-                        editor.putString("username", Objects.requireNonNull(txtUsername.getEditText()).getText().toString()).apply();
+                        editor.putString("username", Objects.requireNonNull(txtEmail.getEditText()).getText().toString()).apply();
                         editor.putString("password", Objects.requireNonNull(txtPassword.getEditText()).getText().toString()).apply();
                     }
                 }
@@ -119,13 +126,14 @@ public class LoginActivity extends AppCompatActivity {
 
     //Ánh xạ (Mapping) các thành phần trong View sang Activity
     private void getMappingItem() {
-        txtPassword_note = findViewById(R.id.txtPassword_note);
-        txtUsername_note = findViewById(R.id.txtUsername_note);
-        txtUsername = findViewById(R.id.txtUsername);
-        txtPassword = findViewById(R.id.txtPassword);
+        txtEmail = findViewById(R.id.edtEmail);
+        txtPassword = findViewById(R.id.edtPassword);
         chkSavePassword = findViewById(R.id.chkSavePassword);
         btnLogin = findViewById(R.id.btnLogin);
-        btnForgetPassword = findViewById(R.id.btnForgetPassword);
+        txtForgetPassword = findViewById(R.id.txtForgetPassword);
+        btnRegister = findViewById(R.id.btnRegister);
+        btnAuthThroughGoogle = findViewById(R.id.btnAuthThroughGoogle);
+        btnAuthThroughFacebook = findViewById(R.id.btnAuthThroughFacebook);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

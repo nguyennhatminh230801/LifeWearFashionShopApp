@@ -13,8 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LifeWearFashionShopApp">
         <activity
-            android:name=".View.Login2Activity"
-            android:exported="true">
+            android:name=".View.HomeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,8 +27,9 @@
             android:exported="false" />
         <activity
             android:name=".View.LoginActivity"
-            android:exported="false" />
+            android:exported="false">
 
+        </activity>
     </application>
 
 </manifest>
