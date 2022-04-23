@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/drawable/bg_white_corner_radius_5dp_stroke_black_2dp.xml" value="0.1075" />
         <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/drawable/green_rounded_background.xml" value="0.1175" />
         <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/activity_login2.xml" value="0.25" />
         <entry key="..\:/Users/Administrator/Desktop/Github/LifeWearFashionShopApp/app/src/main/res/layout/activity_login.xml" value="0.2798913043478261" />
         <entry key="..\:/Users/Administrator/Desktop/Github/LifeWearFashionShopApp/app/src/main/res/layout/activity_register.xml" value="0.18802083333333333" />
       </map>

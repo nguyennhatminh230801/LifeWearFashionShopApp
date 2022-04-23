@@ -1,11 +1,13 @@
 package com.nguyennhatminh614.lifewearfashionshopapp.Presenter.LoginUseCase;
 
 import com.nguyennhatminh614.lifewearfashionshopapp.Model.TempAccountModel;
-import com.nguyennhatminh614.lifewearfashionshopapp.util.ILogicCase;
+
+import okhttp3.ResponseBody;
 
 public interface ILogin {
-    interface View extends ILogicCase {
-
+    interface View {
+        void onLoginSuccess(int responseCode, ResponseBody requestBody);
+        void onLoginFailure();
     }
 
     interface Presenter{

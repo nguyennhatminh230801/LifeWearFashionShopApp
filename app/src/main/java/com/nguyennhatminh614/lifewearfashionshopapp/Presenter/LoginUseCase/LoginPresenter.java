@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.nguyennhatminh614.lifewearfashionshopapp.Model.TempAccountModel;
 import com.nguyennhatminh614.lifewearfashionshopapp.util.api.APIService;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,17 +18,15 @@ public class LoginPresenter implements ILogin.Presenter{
 
     @Override
     public void onHandleLogin(TempAccountModel tempAccountModel) {
-        APIService.apiService.loginMethod(tempAccountModel).enqueue(new Callback<TempAccountModel>() {
-            //Xảy ra khi gửi dữ liệu tài khoản thành công
+        APIService.apiService.loginMethod(tempAccountModel).enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<TempAccountModel> call, Response<TempAccountModel> response) {
-                mView.onEventSuccess();
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                mView.onLoginSuccess(response.code(), response.body());
             }
 
-            //Xảy ra khi gửi dữ liệu tài khoản thất bại
             @Override
-            public void onFailure(Call<TempAccountModel> call, Throwable t) {
-                mView.onEventError();
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                mView.onLoginFailure();
             }
         });
     }

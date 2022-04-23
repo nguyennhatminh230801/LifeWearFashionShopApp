@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-public class Product {
+public class ProductModel {
     @SerializedName("id")
     @Expose
     private int id;
@@ -58,10 +58,10 @@ public class Product {
     @Expose
     private BrandModel brandModel;
 
-    public Product() {
+    public ProductModel() {
     }
 
-    public Product(int id, String name, String slug, String description, String status, String category_id, String brand_id, String created_at, String updated_at, ArrayList<ImageModel> listImages, CoverModel coverModel, CategoryModel categoryModel, BrandModel brandModel) {
+    public ProductModel(int id, String name, String slug, String description, String status, String category_id, String brand_id, String created_at, String updated_at, ArrayList<ImageModel> listImages, CoverModel coverModel, CategoryModel categoryModel, BrandModel brandModel) {
         this.id = id;
         this.name = name;
         this.slug = slug;

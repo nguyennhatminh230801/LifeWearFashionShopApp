@@ -3,7 +3,7 @@ package com.nguyennhatminh614.lifewearfashionshopapp.util.api;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.nguyennhatminh614.lifewearfashionshopapp.Model.AccountModel;
-import com.nguyennhatminh614.lifewearfashionshopapp.Model.Product;
+import com.nguyennhatminh614.lifewearfashionshopapp.Model.ProductModel;
 import com.nguyennhatminh614.lifewearfashionshopapp.Model.TempAccountModel;
 
 import java.util.ArrayList;
@@ -15,6 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -38,7 +39,7 @@ public interface APIService {
             "Accept: application/json",
             "Content-Type: application/json"
     })
-    Call<TempAccountModel> loginMethod(@Body TempAccountModel tempAccountModel);
+    Call<ResponseBody> loginMethod(@Body TempAccountModel tempAccountModel);
 
     // @Post(base_url/register):
     // Dang ky 1 tai khoan moi
@@ -51,11 +52,8 @@ public interface APIService {
 
     // Lay tat ca san pham trong CSDL
     @GET("products")
-    @Headers({
-            "Accept: application/json",
-            "Authorization: Bearer 1|WuYQmYk6cmjXo8SZWTV5LuF7vXT7BSIQ90Ot0QBZ"
-    })
-    Call<ArrayList<Product>> getAllProducts(@Query("limit") Integer maximumProductsNumber, @Query("start") Integer StartFromID);
+    @Headers({"Accept: application/json"})
+    Call<ArrayList<ProductModel>> getAllProducts(@Header("Authorization") String authToken, @Query("limit") Integer maximumProductsNumber, @Query("start") Integer StartFromID);
 
     //Lấy mã reset qua email
     @POST("forgot")
@@ -82,9 +80,7 @@ public interface APIService {
     Call<ResponseBody> verifyingResetPassword(@Field("email") String email, @Field("reset_code") String resetCode);
 
     //Lấy auth user
-//    @GET("user")
-//    @Headers({
-//            "Accept: application/json",
-//            "Authorization: Bearer 1|WuYQmYk6cmjXo8SZWTV5LuF7vXT7BSIQ90Ot0QBZ"
-//    })
+    @GET("user")
+    @Headers({"Accept: application/json"})
+    Call<ResponseBody> getUserInformation(@Header("Authorization") String authToken);
 }

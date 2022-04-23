@@ -15,6 +15,9 @@
     //in Activity
     <string name="loginSuccess">Đăng Nhập Thành Công</string>
     <string name="loginFail">Đăng Nhập Thất Bại</string>
+    <string name="my_logo_app">My Logo App</string>
+    <string name="email_input">Email</string>
+    <string name="txtPassword">Mật Khẩu</string>
 
     //register activity
 
