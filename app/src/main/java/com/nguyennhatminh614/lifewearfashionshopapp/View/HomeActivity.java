@@ -14,24 +14,22 @@ import com.nguyennhatminh614.lifewearfashionshopapp.databinding.ActivityHomeBind
 
 public class HomeActivity extends AppCompatActivity {
 
-    private ActivityHomeBinding binding;
+    BottomNavigationView navView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
 
-        binding = ActivityHomeBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                R.id.navigation_home, R.id.navigation_shopping, R.id.navigation_favorite, R.id.navigation_contact, R.id.navigation_user_profile)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_home);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
-    }
 
+        NavController navController = Navigation.findNavController(HomeActivity.this, R.id.nav_host_fragment_activity_home);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(navView, navController);
+    }
 }

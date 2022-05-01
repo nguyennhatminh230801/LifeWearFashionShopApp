@@ -4,9 +4,21 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/drawable/bg_white_corner_radius_5dp_stroke_black_2dp.xml" value="0.1075" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/drawable/bg_yellow_corner_10dp.xml" value="0.129" />
         <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/drawable/green_rounded_background.xml" value="0.1175" />
-        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.129" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/activity_login.xml" value="0.14" />
         <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/activity_login2.xml" value="0.25" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/fragment_contact.xml" value="0.20416666666666666" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.1962962962962963" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/fragment_favorite.xml" value="0.20416666666666666" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/fragment_notifications.xml" value="0.20416666666666666" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/fragment_shopping.xml" value="0.20416666666666666" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/layout/fragment_user_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Github/LifeWearFashionShopApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Administrator/Desktop/Github/LifeWearFashionShopApp/app/src/main/res/layout/activity_login.xml" value="0.2798913043478261" />
         <entry key="..\:/Users/Administrator/Desktop/Github/LifeWearFashionShopApp/app/src/main/res/layout/activity_register.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Administrator/Desktop/Lifewear/app/src/main/res/drawable/bg_white_corner_10d_stroke_yellow_2dp.xml" value="0.207" />

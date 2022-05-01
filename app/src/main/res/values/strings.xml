@@ -18,16 +18,20 @@
     <string name="my_logo_app">My Logo App</string>
     <string name="email_input">Email</string>
     <string name="txtPassword">Mật Khẩu</string>
-    <string name="btnLogin">Đăng Nhập Ngay !!</string>
+    <string name="btnLogin">Đăng Nhập</string>
     <string name="chkSavePassword">Lưu mật khẩu</string>
     <string name="txtForgetPassword">Quên Mật Khẩu?</string>
     <string name="or_line">Hoặc</string>
     <string name="btnRegister">Đăng Ký Tài Khoản Mới</string>
     <string name="txtLoginThroughAccount">Đăng Nhập Thông Qua Tài Khoản:</string>
     <string name="title_activity_home">HomeActivity</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Trang Chủ</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="navigation_shopping">Mua Sắm</string>
+    <string name="navigation_favorite">Yêu thích</string>
+    <string name="navigation_contact">Liên Hệ</string>
+    <string name="navigation_user_profile">Cá Nhân</string>
 
     //register activity
 

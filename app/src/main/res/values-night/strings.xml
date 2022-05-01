@@ -1,5 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">LifeWearFashionShopApp</string>
+    <string name="app_title">Life Wear Fashion App</string>
+
+    //login activity
+    //in XML
+    <string name="loginActivity_txtUsername_hint">Nhập Tài Khoản:</string>
+    <string name="loginActivity_txtUsername_note_hint">Nhập vào tài khoản</string>
+    <string name="loginActivity_txtPassword_hint">Nhập Mật Khẩu:</string>
+    <string name="loginActivity_txtPassword_note_hint">Nhập vào mật khẩu:</string>
+    <string name="loginActivity_chkSavePassword">Lưu mật khẩu</string>
+    <string name="loginActivity_btnLogin_text">Đăng Nhập</string>
+    <string name="loginActivity_btnForgetPassword_text">Quên Mật Khẩu</string>
+
+    //in Activity
+    <string name="loginSuccess">Đăng Nhập Thành Công</string>
+    <string name="loginFail">Đăng Nhập Thất Bại</string>
+    <string name="my_logo_app">My Logo App</string>
+    <string name="email_input">Email</string>
     <string name="txtPassword">Mật Khẩu</string>
+    <string name="btnLogin">Đăng Nhập</string>
     <string name="chkSavePassword">Lưu mật khẩu</string>
+    <string name="txtForgetPassword">Quên Mật Khẩu?</string>
+    <string name="or_line">Hoặc</string>
+    <string name="btnRegister">Đăng Ký Tài Khoản Mới</string>
+    <string name="txtLoginThroughAccount">Đăng Nhập Thông Qua Tài Khoản:</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Trang Chủ</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="navigation_shopping">Mua Sắm</string>
+    <string name="navigation_favorite">Yêu thích</string>
+    <string name="navigation_contact">Liên Hệ</string>
+    <string name="navigation_user_profile">Cá Nhân</string>
+
+    //register activity
+
 </resources>

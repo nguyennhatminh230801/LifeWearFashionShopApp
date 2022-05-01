@@ -7,19 +7,31 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.nguyennhatminh614.lifewearfashionshopapp.View.home_activity_tab_screen.home.HomeFragment"
+        android:name="com.nguyennhatminh614.lifewearfashionshopapp.View.home_activity_tab_screen.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.nguyennhatminh614.lifewearfashionshopapp.View.home_activity_tab_screen.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_shopping"
+        android:name="com.nguyennhatminh614.lifewearfashionshopapp.View.home_activity_tab_screen.ShoppingFragment"
+        android:label="@string/navigation_shopping"
+        tools:layout="@layout/fragment_shopping" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.nguyennhatminh614.lifewearfashionshopapp.View.home_activity_tab_screen.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_favorite"
+        android:name="com.nguyennhatminh614.lifewearfashionshopapp.View.home_activity_tab_screen.FavoriteFragment"
+        android:label="@string/navigation_favorite"
+        tools:layout="@layout/fragment_favorite" />
+
+    <fragment
+        android:id="@+id/navigation_contact"
+        android:name="com.nguyennhatminh614.lifewearfashionshopapp.View.home_activity_tab_screen.ContactFragment"
+        android:label="@string/navigation_contact"
+        tools:layout="@layout/fragment_contact" />
+
+    <fragment
+        android:id="@+id/navigation_user_profile"
+        android:name="com.nguyennhatminh614.lifewearfashionshopapp.View.home_activity_tab_screen.UserProfileFragment"
+        android:label="@string/navigation_user_profile"
+        tools:layout="@layout/fragment_user_profile" />
 </navigation>
